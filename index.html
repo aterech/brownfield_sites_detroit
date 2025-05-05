@@ -82,6 +82,45 @@ body { margin: 0; padding: 0; }
 
         });
 
+        map.addSource('mapbox-terrain3', {
+
+            type: 'vector',
+
+            // Use any Mapbox-hosted tileset using its tileset id.
+
+            // Learn more about where to find a tileset id:
+
+            // https://docs.mapbox.com/help/glossary/tileset-id/
+
+            url: 'mapbox://at8084.6zpacemh'
+
+        });
+
+        map.addLayer(
+
+            {
+
+                'id': 'residential-data',
+
+                'type': 'fill',
+
+                'source': 'mapbox-terrain3',
+
+                'source-layer': 'residential_final_4326-agld25',
+
+                'paint': {
+
+                    'fill-color': '#3da406',
+
+                    'fill-opacity': 0.8
+
+                }
+
+            },
+
+            'road-label-simple'
+        );
+
         map.addLayer(
 
             {
